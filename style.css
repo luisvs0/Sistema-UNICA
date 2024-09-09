@@ -1,0 +1,268 @@
+/* Resetando estilo padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    background-color: #f4f4f4;
+    color: #333;
+    flex-direction: column;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #003150; /* Cor azul clara */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do menu */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.menu-logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.menu-items {
+    list-style-type: none;
+}
+
+.menu-items li {
+    margin: 15px 0;
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-items a i {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.menu-items a:hover {
+    background-color: #003150; /* Cor ao passar o mouse */
+    transform: scale(1.02); /* Efeito de zoom suave */
+}
+
+.menu-items .active a {
+    background-color: #003150;
+    padding-left: 15px;
+    border-left: 4px solid #e63946;
+}
+
+.footer-logo {
+    text-align: center;
+    color: white;
+    margin-top: auto;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+}
+
+/* Conteúdo principal */
+.main-content {
+    margin-left: 250px; 
+    padding: 20px;
+    width: calc(100% - 250px); /* Ajusta a largura do conteúdo principal para a área restante */
+    transition: margin-left 0.3s ease;
+}
+
+/* Melhorias para a barra de busca */
+.search-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input, .search-bar select {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus, .search-bar select:focus {
+    border-color: #003150;
+    box-shadow: 0 0 8px rgba(0, 75, 122, 0.2);
+    outline: none;
+}
+
+.btn-search, .btn-print {
+    background-color: #003150;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-search:hover, .btn-print:hover {
+    background-color: #003150;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-search i, .btn-print i {
+    margin-right: 8px;
+}
+
+/* Tabela */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+table td {
+    font-size: 14px;
+}
+
+/* Botões de ação */
+.btn-action {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-green {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-red {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+    /* Ocultar o menu lateral por padrão */
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        width: 250px;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    /* Ajustar o conteúdo principal */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Ícone do menu mobile */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #003150;
+        color: white;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1001;
+    }
+
+    .mobile-header h1 {
+        font-size: 18px;
+    }
+
+    .mobile-header i {
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Estilos para a barra de busca e tabela */
+    .search-bar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-bar input, .search-bar select, .btn-search, .btn-print {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .table-responsive {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+.text-menu {
+    margin-top: 20px;
+}
+.text-cotand {
+    margin-top: 20px;
+}

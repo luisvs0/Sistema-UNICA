@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cotações - UNICA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icone.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Ícone do menu hambúrguer (visível no mobile) -->
+    <div class="mobile-header">
+        <i class="fas fa-bars" id="mobile-menu-toggle"></i>
+        <h1>Cotações</h1>
+    </div>
+
+    <!-- Menu lateral -->
+    <div class="sidebar" id="sidebar">
+        <div class="menu-logo">
+            <h1 class="text-menu">Menu</h1>
+        </div>
+        <ul class="menu-items">
+            <li><a href="incluir.html"><i class="fas fa-plus-circle"></i> Incluir</a></li>
+            <li class="active"><a href="#"><i class="fas fa-hourglass-half"></i> Em Andamento</a></li>
+            <li><a href="aprovado.html"><i class="fas fa-check-circle"></i> Aprovado</a></li>
+            <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> Faturado</a></li>
+            <li><a href="#"><i class="fas fa-times-circle"></i> Cancelado</a></li>
+        </ul>
+        <div class="footer-logo">
+            <img src="icone.png"  alt="Unica Logo">
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content" id="main-content">
+        <h1 class="text-cotand">Cotações em Andamento</h1>
+
+        <!-- Barra de busca -->
+        <div class="search-bar">
+            <input type="text" placeholder="Busca">
+            <select>
+                <option value="">Centro de Custo</option>
+            </select>
+            <input type="text" placeholder="Placa">
+            <select>
+                <option value="">Ordenar</option>
+            </select>
+            <button class="btn-search"><i class="fas fa-search"></i> Pesquisar</button>
+            <button class="btn-print"><i class="fas fa-print"></i> Imprimir</button>
+        </div>
+
+        <!-- Tabela de cotações -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>Placa</th>
+                        <th>Modelo</th>
+                        <th>Centro de Custo</th>
+                        <th>Propostas</th>
+                        <th>Data de Abertura</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1785</td>
+                        <td>SFQ1983</td>
+                        <td>IVECO 15.190 EEC</td>
+                        <td>Secretaria de Educação de São Roque</td>
+                        <td>O3</td>
+                        <td>12/08/2024</td>
+                        <td>
+                            <button class="btn-action btn-green"><i class="fas fa-check"></i></button>
+                            <button class="btn-action btn-red"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <!-- Mais linhas da tabela -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
